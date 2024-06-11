@@ -30,7 +30,7 @@ const postMessage = async () => {
   } catch (error) {
     console.error("Error posting message:", error);
   } finally {
-    pool.close()
+    pool.close(relayUrls)
     process.exit(0);
   }
 };
