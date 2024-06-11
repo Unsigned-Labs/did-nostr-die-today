@@ -1,0 +1,5 @@
+jobs:
+  - type: cron
+    name: Daily Nostr Post
+    schedule: "0 21 * * *"  # Every day at 9 PM IST
+    command: "node index.js"
