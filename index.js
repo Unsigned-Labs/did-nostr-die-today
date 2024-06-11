@@ -30,6 +30,7 @@ const postMessage = async () => {
   } catch (error) {
     console.error("Error posting message:", error);
   } finally {
+    pool.close()
     process.exit(0);
   }
 };
