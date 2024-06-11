@@ -1,0 +1,16 @@
+name: Daily Cron Job
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # 8:30 PM IST is 15:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  trigger-vercel-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Vercel function
+        run: |
+          curl -X POST https://your-vercel-deployment-url/trigger \
+          -H "Content-Type: application/json" \
+          -H "x-api-key: ${{ secrets.API_KEY }}"
