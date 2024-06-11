@@ -29,6 +29,8 @@ const postMessage = async () => {
     console.log("Post sent successfully!");
   } catch (error) {
     console.error("Error posting message:", error);
+  } finally {
+    process.exit(0);
   }
 };
 
